@@ -1,0 +1,33 @@
+{
+  "name": "@etalab/scpc-as-api",
+  "version": "0.1.0",
+  "description": "API par dessus le service de consultation du plan cadastral de la DGFiP",
+  "main": "index.js",
+  "repository": "git@github.com:etalab/scpc-as-api.git",
+  "author": "Jérôme Desboeufs <jerome.desboeufs@data.gouv.fr>",
+  "license": "MIT",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "start": "micro",
+    "lint": "xo"
+  },
+  "dependencies": {
+    "lodash": "^4.17.5",
+    "micro": "^9.1.0",
+    "superagent": "^3.8.2"
+  },
+  "devDependencies": {
+    "micro-dev": "^2.2.0",
+    "xo": "^0.20.3"
+  },
+  "xo": {
+    "semicolon": false,
+    "space": 2
+  },
+  "engines": {
+    "node": ">= 8"
+  }
+}
