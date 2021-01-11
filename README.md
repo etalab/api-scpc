@@ -1,2 +1,3 @@
-# scpc-as-api
-API par dessus le service de consultation du plan cadastral de la DGFiP
+# API SCPC
+
+API permettant de générer un extrait de plan cadastral à partir du service cadastre.gouv.fr.

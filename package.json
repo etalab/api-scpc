@@ -1,9 +1,9 @@
 {
-  "name": "@etalab/scpc-as-api",
+  "name": "@etalab/api-scpc",
   "version": "0.1.0",
-  "description": "API par dessus le service de consultation du plan cadastral de la DGFiP",
+  "description": "API permettant de générer un extrait de plan cadastral",
   "main": "index.js",
-  "repository": "git@github.com:etalab/scpc-as-api.git",
+  "repository": "https://github.com/etalab/api-scpc",
   "author": "Jérôme Desboeufs <jerome.desboeufs@data.gouv.fr>",
   "license": "MIT",
   "private": false,
