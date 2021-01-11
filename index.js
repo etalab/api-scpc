@@ -1,22 +1,24 @@
-const {parse} = require('querystring')
-const {send} = require('micro')
+const express = require('express')
 const {fetchExtraitPlanCadastral} = require('./lib/scpc')
 
-function extractQueryString(req) {
-  const pos = req.url.indexOf('?')
-  return pos === -1 ? '' : req.url.substr(pos + 1)
-}
+module.exports = () => {
+  const app = new express.Router()
 
-module.exports = async (req, res) => {
-  try {
-    const qs = extractQueryString(req)
-    const extraitPlanCadastral = await fetchExtraitPlanCadastral(parse(qs))
-    res.setHeader('Content-Type', 'application/pdf')
-    send(res, 200, extraitPlanCadastral)
-  } catch (err) {
-    if (err.message.startsWith('Le paramètre')) {
-      return send(res, 400, {code: 400, message: err.message})
+  function w(handler) {
+    return async (req, res, next) => {
+      try {
+        await handler(req, res, next)
+      } catch (err) {
+        next(err)
+      }
     }
-    return send(res, 500, {code: 500, message: err.message})
   }
+
+  app.get('/', w(async (req, res) => {
+    const extraitPlanCadastral = await fetchExtraitPlanCadastral(req.query)
+    res.setHeader('Content-Type', 'application/pdf')
+    res.send(extraitPlanCadastral)
+  }))
+
+  return app
 }
