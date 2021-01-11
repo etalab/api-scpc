@@ -23,11 +23,15 @@
     "superagent": "^3.8.2"
   },
   "devDependencies": {
-    "xo": "^0.20.3"
+    "xo": "^0.37.1"
   },
   "xo": {
     "semicolon": false,
-    "space": 2
+    "space": 2,
+    "rules": {
+      "unicorn/prevent-abbreviations": "off",
+      "unicorn/catch-error-name": "off"
+    }
   },
   "engines": {
     "node": ">= 8"
