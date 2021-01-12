@@ -32,7 +32,7 @@ La parcelle peut être identifiée à partir du quadruplet (commune, préfixe de
 
 `orientation` : orientation de la page. Orientations disponibles : `portrait` (par défaut) et `paysage`
 
-À venir : rotation du plan, parcelles en instance de mise à jour
+`x` et `y` : coordonnées du centre de l’extrait, en projection légale CC. Ce paramètre est facultatif et sert cadrer l’extrait au mieux.
 
 ## Utilisation
 
@@ -74,3 +74,10 @@ const {fetchExtraitPlanCadastral} = require('@etalab/api-scpc')
 
 await fetchExtraitPlanCadastral(options)
 ```
+
+## TODO
+
+- Support de la rotation du plan
+- Affichage d’un drapeau pour les parcelles en instance de mise à jour
+- Détection automatique de la feuille (plus besoin de fournir la feuille ou la parcelle)
+- Support de WGS-84 en entrée
