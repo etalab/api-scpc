@@ -20,5 +20,12 @@ module.exports = () => {
     res.send(extraitPlanCadastral)
   }))
 
+  app.use((err, req, res, _next) => {
+    res.status(err.statusCode).send({
+      code: err.statusCode,
+      message: err.message
+    })
+  })
+
   return app
 }
