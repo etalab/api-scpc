@@ -12,7 +12,8 @@
   },
   "scripts": {
     "start": "node server",
-    "lint": "xo"
+    "lint": "xo",
+    "build-communes": "node build-communes"
   },
   "dependencies": {
     "@etalab/decoupage-administratif": "^0.8.0",
@@ -23,6 +24,10 @@
     "superagent": "^3.8.2"
   },
   "devDependencies": {
+    "JSONStream": "^1.3.5",
+    "fs-extra": "^9.0.1",
+    "get-stream": "^6.0.0",
+    "got": "^11.8.1",
     "xo": "^0.37.1"
   },
   "xo": {
