@@ -26,9 +26,11 @@ La parcelle peut être identifiée à partir du quadruplet (commune, préfixe de
 
 ### Paramètres d’impression
 
-`echelle` : dénominateur de l’échelle du plan. Échelles disponibles : 200, 500, 650, 1000, 1250, 1500, 2000, 2500, 4000, 5000 (par défaut : `1000`)
+`echelle` : dénominateur de l’échelle du plan. Échelles disponibles : `200`, `500`, `650`, `1000` (par défaut), `1250`, `1500`, `2000`, `2500`, `4000`, `5000`.
 
-`taille` : taille de la feuille à imprimer. Tailles disponibles : A4 et A3 (par défaut : `A4`)
+`taille` : taille de la page à imprimer. Tailles disponibles : `A4` (par défaut) et `A3`.
+
+`orientation` : orientation de la page. Orientations disponibles : `portrait` (par défaut) et `paysage`
 
 À venir : rotation du plan, parcelles en instance de mise à jour
 
