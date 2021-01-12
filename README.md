@@ -29,3 +29,44 @@ La parcelle peut être identifiée à partir du quadruplet (commune, préfixe de
 `echelle` : dénominateur de l’échelle du plan. Échelles disponibles : 200, 500, 650, 1000, 1250, 1500, 2000, 2500, 4000, 5000
 
 À venir : rotation du plan, mode paysage, format A3, parcelles en instance de mise à jour
+
+## Utilisation
+
+Dans tous les cas, une installation Node.js 12 ou supérieur fonctionnelle est nécessaire. yarn peut être remplacé par npm.
+
+### En tant que serveur HTTP autonome
+
+```bash
+git clone https://github.com/etalab/api-scpc.git
+cd api-scpc
+yarn --prod
+yarn start
+```
+
+Le port peut être modifié via la variable d'environnement `PORT`.
+
+### En tant que module Express.js
+
+```bash
+yarn add @etalab/api-scpc
+```
+
+```js
+const {scpc} = require('@etalab/api-scpc')
+
+app.use('/', scpc())
+```
+
+### En tant que fonction JS
+
+NB : bien qu'utilisable dans le navigateur, cette fonction ne donnera aucun résultat car le serveur cadastre.gouv.fr n’autorise pas les appels cross-origin.
+
+```bash
+yarn add @etalab/api-scpc
+```
+
+```js
+const {fetchExtraitPlanCadastral} = require('@etalab/api-scpc')
+
+await fetchExtraitPlanCadastral(options)
+```
